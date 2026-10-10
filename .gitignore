@@ -1,0 +1,39 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+*.xml
+
+# VS Code / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data and Logs
+*.log
+# Keep the generated test telemetry and baselines, but ignore temporary copies
+data/*.tmp
+# Note: DO NOT ignore data/telemetry.jsonl or data/incident_status.json in this project as they serve as the deterministic database.
+
+# OS files
+.DS_Store
+Thumbs.db
+
+data/vector_index.json
+data/eval_index.json
+data/telemetry_backup.jsonl

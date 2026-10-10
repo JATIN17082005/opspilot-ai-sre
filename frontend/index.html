@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpsPilot | Incident Intelligence</title>
+    <script src="/dashboard/tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#151e2e',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-900 text-slate-300 font-sans antialiased min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-slate-850 border-b border-slate-700 px-6 py-3 flex justify-between items-center shadow-md">
+        <div class="flex items-center space-x-3">
+            <i class="fas fa-radar text-blue-400 text-xl"></i>
+            <span class="text-white font-semibold text-lg tracking-wide">OpsPilot</span>
+        </div>
+        <div class="flex space-x-6 text-sm font-medium">
+            <button onclick="nav('overview')" class="hover:text-white focus:outline-none" id="nav-overview">Overview</button>
+            <button onclick="nav('services')" class="hover:text-white focus:outline-none" id="nav-services">Services</button>
+            <button onclick="nav('anomalies')" class="hover:text-white focus:outline-none" id="nav-anomalies">Anomalies</button>
+            <button onclick="nav('incidents')" class="hover:text-white focus:outline-none" id="nav-incidents">Incidents</button>
+            <button onclick="nav('knowledge')" class="hover:text-white focus:outline-none" id="nav-knowledge">Knowledge Base</button>
+        </div>
+        <div class="flex items-center space-x-4 text-xs">
+            <div id="status-backend" class="flex items-center space-x-1">
+                <div class="w-2 h-2 rounded-full bg-slate-500" id="dot-backend"></div>
+                <span>Backend</span>
+            </div>
+            <div id="status-rag" class="flex items-center space-x-1">
+                <div class="w-2 h-2 rounded-full bg-slate-500" id="dot-rag"></div>
+                <span>RAG</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 overflow-y-auto" id="app-content">
+        <!-- Content gets injected here -->
+    </main>
+
+    <script src="/dashboard/app.js"></script>
+</body>
+</html>

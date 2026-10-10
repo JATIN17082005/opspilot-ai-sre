@@ -1,0 +1,11 @@
+pytest
+pandas
+scikit-learn
+
+fastapi
+uvicorn
+pydantic
+
+requests
+
+prometheus-client
