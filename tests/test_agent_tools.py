@@ -12,6 +12,12 @@ def test_tool_get_dependencies():
     assert "payment-service" in res["api-gateway"]
     
 def test_tool_search_knowledge():
+    from agent.tools import _rag_index
+    from rag.document_processor import DocumentProcessor
+    if not _rag_index.chunks:
+        processor = DocumentProcessor("knowledge_base")
+        _rag_index.build_index(processor.process_all())
+
     res = search_knowledge("payment service")
     assert "results" in res
     assert len(res["results"]) > 0
