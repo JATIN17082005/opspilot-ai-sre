@@ -107,7 +107,7 @@ Do NOT include <think> tags.
             resp = requests.post(OLLAMA_URL, json={
                 "model": model, "messages": messages, "stream": False, "format": "json",
                 "options": {"temperature": 0.0}
-            }, timeout=60)
+            }, timeout=180)
             if resp.status_code != 200:
                 raise Exception(f"Ollama API failed: {resp.text}")
                 

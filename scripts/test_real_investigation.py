@@ -6,6 +6,9 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from agent.orchestrator import investigate_incident
 
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+
 def main():
     print('Testing REAL Investigation (Ollama)...')
     try:
